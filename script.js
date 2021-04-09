@@ -65,7 +65,7 @@ function send(){
     if(send){   
         
         var data = {}; 
-        data['nombres'] = nombres; 
+        data['nombre'] = nombres; 
         data['email'] = correo; 
         data['content'] = mensaje; 
     
