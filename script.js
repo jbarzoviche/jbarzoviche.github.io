@@ -29,62 +29,74 @@ $(document).ready(function(){
 
     $("#cmodal_form").on("submit", function(e) {
         e.preventDefault();
-        
-        var nombres = $("#nombres").val();
-        var correo = $("#correo").val();
-        var mensaje = $("#mensaje").val();
-                
-        var send = true;
-        $("#message").html('');        
-        
-        if(send && (nombres == '' || correo == '' || mensaje == '')){ 
-            $("#message").html('Llene todos los campos requeridos(*) del formulario');
-            send = false;
-        }
-        
-        if(send && !validateEmail(correo)){ 
-            $("#message").html('Ingrese un email válido');
-            send = false;
-        }
-        
-        if(send){   
-            
-            var data = {}; 
-            data['nombres'] = nombres; 
-            data['email'] = correo; 
-            data['content'] = mensaje; 
-        
-            $.ajax({ 
-                type: "POST",
-                headers: {
-                    'Authorization':'Bearer TGEgbXVjaGFjaGEgbWFsY3JpYWRh',
-                    'Content-Type':'application/json'
-                },
-                url: "https://dev.osuu.pe/rest/", 
-                dataType: "json", 
-                data: JSON.stringify(data), 
-                beforeSend: function() {
-                    $("#sendForm span").addClass("carga");
-                },
-                success: function(msg){ 
-                    $("#sendForm span").removeClass("carga");
-                    if(msg.status == '200 OK'){
-                        document.getElementById("cmodal_form").reset();
-                    }else{
-                        $("#message").html('Error al enviar');
-                    }
-                },
-                error: function (rpta, ajaxOptions, thrownError) {
-                    $("#sendForm span").removeClass("carga");
-                    
-                    $("#message").html('Error al enviar');
-                }
-            }); 
+        send();
+    });
+    $('#cmodal_form').keypress(function(e) {
+        var keycode = (e.keyCode ? e.keyCode : e.which);
+        if (keycode == '13') {
+            send();
+            e.preventDefault();
+            return false;
         }
     });
+    
 
     
 });
+
+function send(){
+    var nombres = $("#nombres").val();
+    var correo = $("#correo").val();
+    var mensaje = $("#mensaje").val();
+            
+    var send = true;
+    $("#message").html('');        
+    
+    if(send && (nombres == '' || correo == '' || mensaje == '')){ 
+        $("#message").html('Llene todos los campos requeridos(*) del formulario');
+        send = false;
+    }
+    
+    if(send && !validateEmail(correo)){ 
+        $("#message").html('Ingrese un email válido');
+        send = false;
+    }
+    
+    if(send){   
+        
+        var data = {}; 
+        data['nombres'] = nombres; 
+        data['email'] = correo; 
+        data['content'] = mensaje; 
+    
+        $.ajax({ 
+            type: "POST",
+            headers: {
+                'Authorization':'Bearer TGEgbXVjaGFjaGEgbWFsY3JpYWRh',
+                'Content-Type':'application/json'
+            },
+            url: "https://dev.osuu.pe/rest/", 
+            dataType: "json", 
+            data: JSON.stringify(data), 
+            beforeSend: function() {
+                $("#sendForm span").addClass("carga");
+            },
+            success: function(msg){ 
+                $("#sendForm span").removeClass("carga");
+                if(msg.status == '200 OK'){
+                    document.getElementById("cmodal_form").reset();
+                }else{
+                    $("#message").html('Error al enviar');
+                }
+            },
+            error: function (rpta, ajaxOptions, thrownError) {
+                $("#sendForm span").removeClass("carga");
+                
+                $("#message").html('Error al enviar');
+            }
+        }); 
+    }
+}
 
 function validaNumericos(event) {
     if(event.charCode >= 48 && event.charCode <= 57){
