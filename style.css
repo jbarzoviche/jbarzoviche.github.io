@@ -129,10 +129,65 @@ button{
 }
 /*GENERALES*/
 
-.nav-primary__icon{
-    opacity: 0;
+header{
+    display: flex;
+}
+.nav-primary__menu,
+.nav-primary__redes{
+    display: none;
+}
+header.active .nav-primary__redes{
+    display: flex;
+    flex-wrap: wrap;
     position: absolute;
-    top: 65px;
+    bottom: 30px;
+    left: 40px;
+}
+.nav-primary__redes li{
+    margin-right: 10px;
+}
+.nav-primary__redes li:last-child{
+    margin-right: 0;
+}
+.nav-primary__redes li a{
+    background-color: #606064;
+    color: #FFF;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.25s ease-in-out;
+}
+.nav-primary__redes li a:hover{
+    background-color: #000;
+}
+
+header.active .nav-primary__menu{
+    position: absolute;
+    top: 100px;
+    right: 40px;
+    display: block;
+    
+}
+.nav-primary__menu li{
+    margin-left: 20px;
+    text-align: right;
+}
+.nav-primary__menu li a{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 42px;
+    color: #272727;
+}
+
+.nav-primary__icon{
+    opacity: 1;
+    position: fixed;
+    top: 30px;
     right: 40px;
     height: 28px;
     width: 39px;
@@ -140,26 +195,26 @@ button{
     transition: all 0.50s ease-in-out;
     z-index: 999;
     animation-duration: 1.8s;
-    animation-delay: 1s;
+    animation-delay: 0s;
     animation-name: fadeInUp;
     animation-fill-mode: both;
 }
 .nav-primary__icon:hover{
-    height: 31px;
-    top: 63px;
+    height: 30px;
+    top: 29px;
 }
 .nav-primary__icon .i_large{
     position: absolute;
     content: '';
     transform: translateY(-50%);
-    background-color:rgba(255,255,255,.7);
+    background-color:rgba(0,0,0,.7);
     width: 39px;
     height: 5px;
     border-radius: 50px;
     transition: all 0.50s ease-in-out;
 }
 .nav-primary__icon:hover .i_large{
-    background-color:rgba(255,255,255,1);
+    background-color:rgba(0,0,0,1);
 }
 .nav-primary__icon .large_firts{
     top:0
@@ -170,28 +225,54 @@ button{
 .nav-primary__icon .large_last{
     top:100%;
 }
-.nav-primary__icon.active:hover{
-    top: 65px;
-    height: 28px !important;
+header.active .nav-primary__icon:hover{
+    height: 28px;
+    top: 30px;
 }
-.nav-primary__icon.active .large_firts{
+header.active .nav-primary__icon .large_firts{
     transform: rotate(45deg);
     top: 2px;
     left: 2px;
     width: 18px;
 }
-.nav-primary__icon.active .large_middle{
+header.active .nav-primary__icon .large_middle{
     top: 23px;
     left: 23px;
     width: 18px;
     transform: rotate(45deg);
 }
-.nav-primary__icon.active .large_last{
+header.active .nav-primary__icon .large_last{
     top:12px;
     transform: rotate(135deg);
     width: 45px;
 }
+header.active{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(255,255,255,.9);
+}
 
+@media (max-width:480px){
+    header.active .nav-primary__menu{        
+        right: 20px;
+    }
+    .nav-primary__menu li a{        
+        font-size: 22px;
+        line-height: 35px;        
+    }
+    header.active .nav-primary__redes{
+        left: 20px;
+    }
+    .nav-primary__icon{
+        right: 20px;
+    }
+}
+
+/*HOME*/
 .section--black{
     background-color: #272727;
 }
@@ -474,6 +555,7 @@ label span{
     line-height: 20px;
     padding: 12px 30px;
     text-transform: uppercase;
+    display: flex;
 }
 .btn--black:hover{
     background-color: #606064;
@@ -533,13 +615,10 @@ label span{
     .content_contacto form {
         width: calc(100%);
         padding-right: 0px;
+        margin-bottom: 10px;
     }
     .content_contacto_cc {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    .content_contacto{
-        flex-direction: column-reverse;
+        width: 100%;        
     }
 }
 @media (max-width:480px){
@@ -611,4 +690,10 @@ label span{
   100% {
     transform: rotate(360deg);
   }
+}
+
+.section--inicio{
+    min-height: 700px;
+    padding: 0;
+    background-color: #606064;
 }
