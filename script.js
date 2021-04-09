@@ -37,7 +37,7 @@ $(document).ready(function(){
         var send = true;
         $("#message").html('');        
         
-        if(send && (nombres == '' || mensaje == '')){ 
+        if(send && (nombres == '' || correo == '' || mensaje == '')){ 
             $("#message").html('Llene todos los campos requeridos(*) del formulario');
             send = false;
         }
