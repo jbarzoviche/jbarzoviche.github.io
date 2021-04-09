@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="eS">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -18,9 +18,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>     
     <script type="text/javascript" src="script.js?v=1.2"></script>    
     <script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script type="text/javascript" src="assets/js/stickystack.js"></script>
 </head>
     
-<body>     
+<body> 
 <header>
     <div class="nav-primary__icon">
         <div class="i_large large_firts"></div>
@@ -29,125 +30,150 @@
     </div>
     <ul class="nav-primary__menu">
         <li><a href="#">Sobre mi</a></li>
+        <li><a href="#">Habilidades</a></li>
         <li><a href="#">Experiencia</a></li>
         <li><a href="#">Proyectos</a></li>
         <li><a href="#">Contacto</a></li>
     </ul>
-    <ul class="nav-primary__redes">
-        <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-        <li><a href=""><i class="fas fa-envelope"></i></a></li>
-    </ul>
 </header>
-<section class="section section--inicio" id="home">
-    <div class="content_index">
-        <div class="content_index__header">
-            http://jbarzoviche/github.io
-        </div>
-        <div class="content_index__charge">
 
-        </div>
-    </div>
-</section>
-<section class="section section--sobremi" id="aboutme">
-    <div class="content_text">
-        Estoy dedicado al desarrollo web, orientado desde diferentes áreas como accesibilidad digital, experiencia del usuario y diseño visual siendo un desarrollador Full Stack. <br><br>
+<div class="main-content-wrapper">
+    <section class="section section--inicio" id="home">
 
-        Me encanta el desarrollo y el diseño web en todas sus formas y ayudo a las empresas a mejorar su presencia en Internet y a las personas a entender mejor el mundo de la informática y las nuevas tecnologías.
-    </div>
-</section>
-<section class="section section--habilidades" id="skills">
-    <div class="title">Habilidades</div>
-    <div class="content_skills">
-        <div class="content_skills_item">
-            <div class="content_skills_item_icon"><i class="icon-desktop_windows"></i></div>
-            <div class="content_skills_item_title">DISEÑO WEB</div>
-            <div class="content_skills_item_text">Diseño y maquetación web a medida usando CSS / SASS y HTML5 con el objetivo de crear interfaces de usuario responsive, atractivas, e intuitivas. Prototipado en Figma.</div>
-        </div>
-        <div class="content_skills_item">
-            <div class="content_skills_item_icon"><i class="icon-embed"></i></div>
-            <div class="content_skills_item_title">DESARROLLO WEB FRONT-END</div>
-            <div class="content_skills_item_text">Manipulación del comportamiento de la web usando JQuery, JavaScript y AJAX para crear sitios interactivos, dinámicos e impactantes.</div>
-        </div>
-        <div class="content_skills_item">
-            <div class="content_skills_item_icon"><i class="icon-terminal"></i></div>
-            <div class="content_skills_item_title">DESARROLLO WEB BACK-END</div>
-            <div class="content_skills_item_text">Generación de contenido dinámico y funcionalidades en una web haciendo uso avanzado de PHP y bases de datos MySQL</div>
-        </div>
-        <div class="content_skills_item">
-            <div class="content_skills_item_icon"><i class="icon-meter"></i></div>
-            <div class="content_skills_item_title">OPTIMIZACIÓN SEO</div>
-            <div class="content_skills_item_text">Uso de semántica HTML, Schema, palabras clave y optimización de la velocidad de carga del contenido para mejorar la visibilidad y tráfico de la web.</div>
-        </div>
-        <div class="content_skills_item">
-            <div class="content_skills_item_icon"><i class="icon-wordpress"></i></div>
-            <div class="content_skills_item_title">WORDPRESS</div>
-            <div class="content_skills_item_text">Creación y gestión de sitios WordPress y WooCommerce. Elaboración de plantillas personalizadas "from scratch" (desde 0) o usando constructores visuales.</div>
-        </div>
-        <div class="content_skills_item">
-            <div class="content_skills_item_icon"><i class="icon-bolt"></i></div>
-            <div class="content_skills_item_title">EXTRAS</div>
-            <div class="content_skills_item_text">Uso de Frameworks como Codeigniter en PHP.<br> Conocimiento: básico en Vue, intermedio de C# para apps de escritorio. </div>
-        </div>
-    </div>
-</section>
-<section class="section section--experiencia" id="experience">
-    <div class="title">Experiencia</div>
-    <div class="content_experience">
-        <div class="content_experience_item">
-            <div class="content_experience_item_title">Maquetador Web</div>
-            <div class="content_experience_item_text">
-                6 años
+    </section>
+    <section class="section section--sobremi section--black" id="aboutme">
+        <div class="container">
+            <div class="title white">Sobre mi</div>
+            <div class="content_text white">
+                Estoy dedicado al desarrollo web, orientado desde diferentes áreas como accesibilidad digital, experiencia del usuario y diseño visual siendo un desarrollador Full Stack. <br><br>
+
+                Me encanta el desarrollo y el diseño web en todas sus formas y ayudo a las empresas a mejorar su presencia en Internet y a las personas a entender mejor el mundo de la informática y las nuevas tecnologías.
             </div>
         </div>
-        <div class="content_experience_item">
-            <div class="content_experience_item_title">Full Stack</div>
-            <div class="content_experience_item_text">
-                4 años 
+    </section>
+    <section class="section section--habilidades section--gris" id="skills">
+        <div class="container">
+            <div class="title black">Habilidades</div>
+            <div class="content_skills">
+                <div class="content_skills_item">
+                    <div class="content_skills_item_icon"><i class="icon-desktop_windows"></i></div>
+                    <div class="content_skills_item_title">DISEÑO WEB</div>
+                    <div class="content_skills_item_text">Diseño y maquetación web a medida usando CSS / SASS y HTML5 con el objetivo de crear interfaces de usuario responsive, atractivas, e intuitivas. Prototipado en Figma.</div>
+                </div>
+                <div class="content_skills_item">
+                    <div class="content_skills_item_icon"><i class="icon-embed"></i></div>
+                    <div class="content_skills_item_title">DESARROLLO WEB FRONT-END</div>
+                    <div class="content_skills_item_text">Manipulación del comportamiento de la web usando JQuery, JavaScript y AJAX para crear sitios interactivos, dinámicos e impactantes.</div>
+                </div>
+                <div class="content_skills_item">
+                    <div class="content_skills_item_icon"><i class="icon-terminal"></i></div>
+                    <div class="content_skills_item_title">DESARROLLO WEB BACK-END</div>
+                    <div class="content_skills_item_text">Generación de contenido dinámico y funcionalidades en una web haciendo uso avanzado de PHP y bases de datos MySQL</div>
+                </div>
+                <div class="content_skills_item">
+                    <div class="content_skills_item_icon"><i class="icon-meter"></i></div>
+                    <div class="content_skills_item_title">OPTIMIZACIÓN SEO</div>
+                    <div class="content_skills_item_text">Uso de semántica HTML, Schema, palabras clave y optimización de la velocidad de carga del contenido para mejorar la visibilidad y tráfico de la web.</div>
+                </div>
+                <div class="content_skills_item">
+                    <div class="content_skills_item_icon"><i class="icon-wordpress"></i></div>
+                    <div class="content_skills_item_title">WORDPRESS</div>
+                    <div class="content_skills_item_text">Creación y gestión de sitios WordPress y WooCommerce. Elaboración de plantillas personalizadas "from scratch" (desde 0) o usando constructores visuales.</div>
+                </div>
+                <div class="content_skills_item">
+                    <div class="content_skills_item_icon"><i class="icon-bolt"></i></div>
+                    <div class="content_skills_item_title">EXTRAS</div>
+                    <div class="content_skills_item_text">Uso de Frameworks como Codeigniter en PHP. Conocimiento: básico en Vue, intermedio de C# para apps de escritorio. </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section--experiencia" id="experience">
+        <div class="container">
+            <div class="title black">Experiencia</div>
+            <div class="content_experience">
+                <div class="content_experience_item">
+                    <div class="content_experience_item_title">Maquetador Web</div>
+                    <div class="content_experience_item_image">
+                        <img src="assets/images/maquetado-web.jpg" alt="Maquetador Web">
+                        <div class="years_experience"><span class="timer count-number" data-to="4" data-speed="300">&nbsp;</span> años</div>
+                    </div>
+                </div>
+                <div class="content_experience_item">
+                    <div class="content_experience_item_title">Desarrollador Full Stack</div>
+                    <div class="content_experience_item_image">
+                        <img src="assets/images/desarrollador.jpg" alt="Desarrollador Full Stack">
+                        <div class="years_experience"><span class="timer count-number" data-to="7" data-speed="500">&nbsp;</span> años</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section section--proyectos section--black" id="projects">
+        <div class="container">
+            <div class="title white">Proyectos</div>
+            <div class="content_projects">
+                <div class="content_project_item">
+                    <div class="content_project_item_image"><img src="assets/images/1a.jpg" alt="Ninja"></div>
+                    <div class="content_project_item_preview"><img src="assets/images/1b.png" alt="Ninja preview"></div>
+                </div>
+                <div class="content_project_item">
+                    <div class="content_project_item_image"><img src="assets/images/2a.jpg" alt="Siglo BPO"></div>
+                    <div class="content_project_item_preview"><img src="assets/images/2b.png" alt="Siglo BPO preview"></div>
+                </div>
+                <div class="content_project_item">
+                    <div class="content_project_item_image"><img src="assets/images/3a.jpg" alt="Montveg"></div>
+                    <div class="content_project_item_preview"><img src="assets/images/3b.png" alt="Montveg preview"></div>
+                </div>
             </div>
         </div>
     </div>
-</section>
-<section class="section section--proyectos" id="projects">
-    <div class="title">Proyectos</div>
-    <div class="content_projects">
-        <div class="content_project_item">
-            <div class="content_project_item_image"><img src="" alt=""></div>
-            <div class="content_project_item_preview"><img src="" alt=""></div>
-        </div>
-        <div class="content_project_item">
-            <div class="content_project_item_image"><img src="" alt=""></div>
-            <div class="content_project_item_preview"><img src="" alt=""></div>
-        </div>
-        <div class="content_project_item">
-            <div class="content_project_item_image"><img src="" alt=""></div>
-            <div class="content_project_item_preview"><img src="" alt=""></div>
-        </div>
-        <div class="content_project_item">
-            <div class="content_project_item_image"><img src="" alt=""></div>
-            <div class="content_project_item_preview"><img src="" alt=""></div>
-        </div>
-        <div class="content_project_item">
-            <div class="content_project_item_image"><img src="" alt=""></div>
-            <div class="content_project_item_preview"><img src="" alt=""></div>
-        </div>
-        <div class="content_project_item">
-            <div class="content_project_item_image"><img src="" alt=""></div>
-            <div class="content_project_item_preview"><img src="" alt=""></div>
-        </div>
-        <div class="content_project_item">
-            <div class="content_project_item_image"><img src="" alt=""></div>
-            <div class="content_project_item_preview"><img src="" alt=""></div>
+    <div class="section section--contacto" id="contact">
+        <div class="container">
+            <div class="title black">Contacto</div>
+            <div class="content_contacto">
+                <form autocomplete="off" method="post" id="cmodal_form">                          
+                    <div class="flex100">
+                        <label>Nombre completo<span>*</span></label>
+                        <input type="text" name="nombres" id="nombres" onkeypress="return validaLetras(event)" class="frm form__input" onkeypress="return validaLetras(event)"  maxlength="50">
+                    </div> 
+                    <div class="flex100">        
+                        <label>Email<span>*</span></label>
+                        <input type="email" name="correo" id="correo" class="frm form__input"  maxlength="40">
+                    </div>    
+                    <div class="flex100">        
+                        <label>Mensaje<span>*</span></label>
+                        <textarea name="mensaje" id="mensaje" class="frm form__input--textarea" rows="7" maxlength="300" ></textarea>                    
+                    </div>
+                    <div class="flex100 message_alert">
+                        <p id="message"></p>
+                    </div>
+                    <div class="flex100 text-center">                        
+                        <button type="submit" id="sendForm" class="btn btn--black">Enviar<span><i class="fas fa-spinner"></i></span></button> 
+                    </div>                            
+                    <div class="flex100 message_success">
+                        <p id="messageSuccess"></p>
+                    </div>
+                </form>
+                <div class="content_contacto_cc">
+                    <div class="content_contacto_cc_title">Social</div>                
+                    <ul class="content_contacto_cc_redes">
+                        <li><a href="http://www.linkedin.com/in/jbarzoviche" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="mailto:jbarzoviche@icloud.com" target="_blank"><i class="fas fa-envelope"></i></a></li>
+                    </ul>
+                    <div class="content_contacto_cc_title">Contáctame</div>
+                    <div class="content_contacto_cc_item">
+                        <i class="fas fa-map-marker-alt"></i> Perú
+                    </div>
+                    <div class="content_contacto_cc_item">
+                        <i class="fas fa-phone-alt"></i> <a href="tel:+51922818960">+51 922818960</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
-<section class="section section--contacto" id="contact">
-    <div class="title">Contacto</div>
-    <div class="content_contacto">
-        
-    </div>
-</section>
+</div>
 </body>
 </html>
-
 
 
