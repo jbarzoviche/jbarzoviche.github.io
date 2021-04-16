@@ -445,9 +445,12 @@ header.active{
     display: flex;
     justify-content: center;
     align-items: center;    
+    height: 286px;;
 }
 .content_project_item_preview img{
     max-width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 .content_contacto{
     display: flex;
@@ -693,7 +696,63 @@ label span{
 }
 
 .section--inicio{
-    min-height: 700px;
+    min-height: 600px;
     padding: 0;
-    background-color: #606064;
+    background-image: url(assets/images/bgheader.jpg);    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.section--inicio .container{
+    height: 100%;
+}
+.section--inicio .opacity{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #272727 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.content_name{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 70px;
+    line-height: 80px;
+    text-align: left;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+}
+@media(max-width:1200px){
+    .content_name {        
+        font-size: 53px;
+        line-height: 68px;
+    }
+}
+@media(max-width:920px){
+    .content_name {        
+        font-size: 35px;
+        line-height: 40px;
+    }
+}
+
+.owl_content_contact_info{
+    display: none;
+}
+
+@media (max-width:768px){
+    .owl_content_contact_info{
+        display: block;
+        margin-top: 20px;
+    }
+    .owl-theme .owl_dots_projects .owl-dot.active span{
+        background-color: #fff !important;
+         border: 1px solid #ffff;     
+    }
+    .owl-theme .owl_dots_projects .owl-dot span{
+        background-color: rgba(0,0,0,.7) !important;
+        border: 1px solid rgba(0,0,0,.7);
+    }
 }

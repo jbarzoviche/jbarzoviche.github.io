@@ -1,8 +1,25 @@
 $(document).ready(function(){
     new WOW().init();  
     var hashed = window.location.hash;
+    var fullw = $(window).width(); 
     
-    $('.main-content-wrapper').stickyStack();
+    if (fullw <= 1200){
+        $(".content_projects").addClass("owl-carousel owl-theme owl_projects");    
+    }else{
+        $(".content_projects").removeClass("owl-carousel owl-theme owl_projects"); 
+    } 
+
+    owl_projects = jQuery('.owl_projects');
+	owl_projects.owlCarousel({
+	    nav: false,
+		dots: true,
+        loop:true,
+	    autoplay: true,
+        autoplayHoverPause: true,
+    	dotsContainer: '.owl_dots_projects',
+        items: 1        
+	});
+
 
     if(hashed){    
         $('html,body').animate({ scrollTop: ($(hashed).offset().top) }, 500); 
@@ -67,8 +84,8 @@ function send(){
         var data = {}; 
         data['nombre'] = nombres; 
         data['email'] = correo; 
-        data['content'] = mensaje; 
-    
+        data['content'] = mensaje;         
+
         $.ajax({ 
             type: "POST",
             headers: {
@@ -88,10 +105,11 @@ function send(){
                 }else{
                     $("#message").html('Error al enviar');
                 }
+                console.log(msg);
             },
             error: function (rpta, ajaxOptions, thrownError) {
+                console.log(rpta);
                 $("#sendForm span").removeClass("carga");
-                
                 $("#message").html('Error al enviar');
             }
         }); 
