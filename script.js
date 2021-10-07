@@ -92,13 +92,13 @@ function send(){
                 'Authorization':'Bearer TGEgbXVjaGFjaGEgbWFsY3JpYWRh',
                 'Content-Type':'application/json'
             },
-            url: "https://dev.osuu.pe/rest/", 
+            url: "https://dev.marketech.app/rest/", 
             dataType: "json", 
             data: JSON.stringify(data), 
             beforeSend: function() {
                 $("#sendForm span").addClass("carga");
             },
-            success: function(msg){ 
+            success: function(msg, data){ 
                 $("#sendForm span").removeClass("carga");
                 if(msg.status == '200 OK'){
                     document.getElementById("cmodal_form").reset();
