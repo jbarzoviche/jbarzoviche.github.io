@@ -85,39 +85,38 @@ function send(){
         if(rcres.length){
             grecaptcha.reset();
 
-            alert('Mensaje');
-            // var data = {};
-            // data['nombre'] = nombres;
-            // data['email'] = correo;
-            // data['content'] = mensaje;
-            //
-            // $.ajax({
-            //     type: "POST",
-            //     headers: {
-            //         'Authorization':'Bearer TGEgbXVjaGFjaGEgbWFsY3JpYWRh',
-            //         'Content-Type':'application/json'
-            //     },
-            //     url: "https://dev.odicua.com/rest/",
-            //     dataType: "json",
-            //     data: JSON.stringify(data),
-            //     beforeSend: function() {
-            //         $("#sendForm span").addClass("carga");
-            //     },
-            //     success: function(msg, data){
-            //         $("#sendForm span").removeClass("carga");
-            //         if(msg.status == '200 OK'){
-            //             document.getElementById("cmodal_form").reset();
-            //         }else{
-            //             $("#message").html('Error al enviar');
-            //         }
-            //         console.log(msg);
-            //     },
-            //     error: function (rpta, ajaxOptions, thrownError) {
-            //         console.log(rpta);
-            //         $("#sendForm span").removeClass("carga");
-            //         $("#message").html('Error al enviar');
-            //     }
-            // });
+            var data = {};
+            data['nombre'] = nombres;
+            data['email'] = correo;
+            data['content'] = mensaje;
+
+            $.ajax({
+                type: "POST",
+                headers: {
+                    'Authorization':'Bearer TGEgbXVjaGFjaGEgbWFsY3JpYWRh',
+                    'Content-Type':'application/json'
+                },
+                url: "https://dev.odicua.com/rest/",
+                dataType: "json",
+                data: JSON.stringify(data),
+                beforeSend: function() {
+                    $("#sendForm span").addClass("carga");
+                },
+                success: function(msg, data){
+                    $("#sendForm span").removeClass("carga");
+                    if(msg.status == '200 OK'){
+                        document.getElementById("cmodal_form").reset();
+                    }else{
+                        $("#message").html('Error al enviar');
+                    }
+                    console.log(msg);
+                },
+                error: function (rpta, ajaxOptions, thrownError) {
+                    console.log(rpta);
+                    $("#sendForm span").removeClass("carga");
+                    $("#message").html('Error al enviar');
+                }
+            });
 
         }else{
             $("#message").html('Por favor verifique el CAPTCHA');
