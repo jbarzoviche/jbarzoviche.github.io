@@ -21,7 +21,16 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>     
     <script type="text/javascript" src="script.js?v=1.2"></script>    
-    <script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('html_element', {
+                'sitekey' : ' 6Lf6HvAgAAAAADwi4coap57ma7z5X1MTWGxcqRyY'
+            });
+        };
+    </script>
 </head>
     
 <body> 
@@ -165,6 +174,7 @@
                         <label>Mensaje<span>*</span></label>
                         <textarea name="mensaje" id="mensaje" class="frm form__input--textarea" rows="7" maxlength="300" ></textarea>                    
                     </div>
+                    <div class="flex100" id="html_element"></div>
                     <div class="flex100 message_alert">
                         <p id="message"></p>
                     </div>
