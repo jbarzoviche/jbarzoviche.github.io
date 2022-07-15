@@ -92,7 +92,7 @@ function send(){
                 'Authorization':'Bearer TGEgbXVjaGFjaGEgbWFsY3JpYWRh',
                 'Content-Type':'application/json'
             },
-            url: "https://dev.marketech.app/rest/", 
+            url: "https://dev.odicua.com/rest/",
             dataType: "json", 
             data: JSON.stringify(data), 
             beforeSend: function() {
